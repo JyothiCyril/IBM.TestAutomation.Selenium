@@ -62,7 +62,7 @@ public class TC_Amazon_003 extends TestBase{
 	@DataProvider
 	public String[][] getData() throws IOException{
 
-		String xFile = "D:\\Selenium Training\\TestAutomation.Selenium\\src\\test\\java\\com\\qa\\testdata\\TestData.xlsx";
+		String xFile = "D:\\Selenium Training\\IBM.TestAutomation.Selenium\\src\\test\\java\\com\\qa\\testdata\\TestData.xlsx";
 		String xSheetName = "Sheet1";
 
 

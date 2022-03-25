@@ -38,7 +38,7 @@ public class TestBase {
 	@BeforeClass
 	public void setUp(String Browser, String Url) throws IOException {
 		
-		fileLoc = new FileInputStream("D:\\Selenium Training\\TestAutomation.Selenium\\src\\test\\java\\com\\qa\\testdata\\credentials.properties");
+		fileLoc = new FileInputStream("D:\\Selenium Training\\IBM.TestAutomation.Selenium\\src\\test\\java\\com\\qa\\testdata\\credentials.properties");
 		Prop = new Properties();
 		Prop.load(fileLoc);
 		
