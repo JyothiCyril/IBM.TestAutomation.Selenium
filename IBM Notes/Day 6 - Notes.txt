@@ -1,0 +1,62 @@
+switchTo() abstract method in WebDriver interface.
+--------------------------------------------------
+
+switchTo() --> from a driver to a Window / Frame / Alert
+
+Working with multiple windows
+Working with frames
+Working with Alerts(java script pop up windows)
+Read the data from properties file
+WebElements method IsDisplayed() , IsEnabled() & IsSelected() --> boolean 
+
+true / false
+
+
+IsDisplayed : check if the element is present on the page
+IsEnabled : check if the element is enabled
+IsSelected : Check if the element is selected by default( check / radio)
+------------------------------------------------------------------
+Case study : Working with multiple windows
+
+1. Open the browser
+2. Launch Citibank URL -- https://www.online.citibank.co.in/
+3. Click on Citigroup.com link
+4. click on Terms and conditions link
+5. Get the reference of all the tabs / windows opened
+6. Get the title of each window
+7. Get all the hyperlink present on each window
+8. close all the browser instances.
+----------------------------------------------------------------------
+
+Case study : Working with frames
+
+1. Open the browser
+2. Launch https://docs.oracle.com/javase/8/docs/api/
+3. Calculate the no. of frames present on the page and get title of each frame and total no. hyper links present on each frame.
+4. Switch to First frame by using name attribute and get all the hyperlinks present on the frame. Click on java.awt
+
+<frame src="overview-frame.html" name="packageListFrame" title="All Packages">
+
+5. switch to second frame by using a locators and get all the hyperlinks present . Check if Applet link is present, if present need to click the link.
+
+<frame src="allclasses-frame.html" name="packageFrame" title="All classes and interfaces (except non-static nested types)">
+
+//frame[@src='allclasses-frame.html']
+
+************************************************************************************
+Working with Alerts(java script pop up windows)
+
+
+Case study:
+
+1. Open the browser
+2. launch https://mail.rediff.com/cgi-bin/login.cgi
+3. Check if the user is on login page
+4. Click the sign in button while the user name and password fields are empty
+5. If the alert window is generated, read the text present on the aler and click ok
+6. Type User name as "Kim Smith"
+7. Type the password as "mercury"
+8. check if the Keep me signed in check boz is selected by default and deselect the check box
+9. check if sign in button is enabled to be clicked.
+
+

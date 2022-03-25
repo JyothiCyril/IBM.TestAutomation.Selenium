@@ -1,0 +1,118 @@
+Test Automation Process in Selenium: It is a systematical approach to construct the test automation framework in selenium.
+
+Test Automation Framework  is categorized into 3 phases:
+---------------------------------------------------------
+
+1. Implementation phase : Designing & Constructing the test automation framework in an organized approach. 
+
+2. Execution phase : Executing / playing back what is designed against the application on different environment.
+
+3. Maintenance phase : Doing the version control of the test artifacts and maintaining the test artifacts on the remote repository will enable the team (team team / Dev ops) need to access the artifacts while working remotely.
+
+****************************************************
+Pre-requiste:
+--------------
+
+1. Test Environment
+2. Application build --> Url.
+3. Browser to be configured.
+4. Test suite --> test scenario : step by step instruction(User instructions : Keyboard / mouse transactions) to repeat the user requirement on AUT. --> Test case template.
+
+
+Browser --> URL --> AUT --> UI elements / GUI entities (hyperlinks, text fields, buttons, radio, check etc.)
+
+Translating the test case into a test code:
+
+Structure of the test code: Lines of code to perform some action when executed.
+
+Test script is a collection of Test objects, Test object description, Method, Test data, Expected value 
+
+Test Object : element / GUI entity
+Test object description : It is reference property / physical description, used by the tool to reach the element at the run session . "Locators"
+Methods : Keyboard / mouse interation to be done on the test objects --> WebElement interface
+Test data : input data
+Expected outcome
+
+
+
+Test Designing + Test Execution + Test Reporting + Test maintenance
+
+1. Implementation phase : Designing & Constructing the test automation framework in an organized approach. 
+
+Step 1 : Create the GUI reference : It is mechanism to create the physical description to reach the elements present on the page and store into an Object Repository.
+	1. How to locate an element using Locators
+	2. How to create the OR using Page Object Model and store the test object description
+
+Step 2 : Create the test script : It is a process of converting the test steps into a executable test code.
+	Ref : Class & methods in WebDriver API.
+
+Step 3 : Customize the test script : Enhance the test code as per the test scenario & test automation guidelines
+
+	Why: Looping structure, condition statement, methods in the code to reusable, input to be read from external scources (DB/excel/properties /CSV etc) --> Single / Repeated input, Cross browser testing, Parallel testing, Enable /disable, prioritization, Exception handle, verification point ( compare the EV & AV)
+
+** Java API , Apache POI, Common io, TestNG, ExtentReports ( capture the test results)
+
+Step 4 : Debug the test script : Check the test script for Syntax & logics
+
+2. Execution phase : Executing / playing back what is designed against the application on different environment.
+
+	Running the test code against the application.
+		
+		1. Run the test script individual
+		2. Run the test script in a suite (testng.xml)
+		3. Run the testng.xml from a pom.xml --> Apache maven
+		4. Run the pom.xml / run.bat --> Eclipse IDE / CLI / Jenkins
+		5. Run the pom.xml from GitHuB repository & execute it on Jenking
+
+3. Maintenance phase : Doing the version control of the test artifacts and maintaining the test artifacts on the remote repository will enable the team (team team / Dev ops) need to access the artifacts while working remotely. 
+
+		Pull the project structure from GitHub (Author)
+		push the new artifacts into Test Lead gitHub ( Branching, Pull Request , Review, Merge )
+******************************************************************************************
+
+WebDriver Interface --> Browser & URL
+WebElement Interface --> Elements , Methods
+Locators --> By class / @FindBy & @FindAll.
+
+
+
+
+Test Scenario:
+--------------
+
+1. Open the browser
+2. Enter the amazon URL
+3. Select Books as Category
+4. Enter / Type Da vinci code in search text field
+5. Click the magnifier button
+6. Check if all the elements related to search item are loaded
+7. Close the browser
+
+WebDriver Inteface --> Abstract methods that will help to perform the events on the browser instance.
+
+Chrome browser
+
+
+1. Download the driver executables / driver binaries - *based on the version of the browser.
+2. Environment variable that launch the driver executable
+
+
+//System.setProperty("webdriver.chrome.driver", "D:\\Tools\\SeleniumDrivers\\chromedriver.exe");
+
+or 
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+
+	//WebDriverManager.edgedriver().setup();
+	//	EdgeDriver eDriver = new EdgeDriver();
+		
+		
+		//WebDriverManager.firefoxdriver().setup();
+		//FirefoxDriver fDriver = new FirefoxDriver();
+		
+		//WebDriverManager.iedriver().setup();
+		//InternetExplorerDriver ieDriver = new InternetExplorerDriver();
+
+**Object Identification in Selenium - WebDriver	
+
+	

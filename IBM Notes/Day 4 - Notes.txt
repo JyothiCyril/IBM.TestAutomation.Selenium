@@ -1,0 +1,173 @@
+TestNG framework / API : collection of class & annotations.
+
+TestNG (NextGeneration) always used along with Selenium for test code enhancement as per the test scenario and test automation guidelines.
+
+TestNG as a framework is designed based on Junit
+
+Junit --> used by developer for unit testing the source code.
+
+TestNG is used for customization of selenium code that can perform some validation activity on the AUT(application under test)
+
+Adv:
+----
+
+1. Customizing the test code for reusablity.
+2. It generates the execution report in the HTML format.
+3. Control the flow of execution of methods with a class or the extended class
+4. Supports single test execution and test suite execution (from a xml file)
+5. Verifications (asserts / check points) : Compare the expected values against the actual values.
+6. grouping, enable/ disable, priorities, dependsOnMethods etc.
+7. Parallel test executions
+8. cross browser testing
+9. parameterization (reading the inputs from xml file (single inputs) / from a method (multiple inputs) -->repeated input testing --> @Parameters & @DataProviders
+
+----------------------------------------------------------
+
+Annotations in TestNG:
+---------------------
+
+
+Annotation in TestNG are the pre-defined classes from the TestNG library that can control the test exection when  it is used as a meta-data to a method.
+
+A method below the annotation will run according to the instructions written in it class.
+
+Types of annotations:
+
+3 types:
+
+1. Annotations used for test fixtures
+2. Annotations used as test case
+3. Anntationa used for parameterization or customization etc.
+
+** Annotations can used only on non-static methods.
+** Annotation always starts with '@' symbol
+
+@Test : only one annotation falls under 2 category : Annotations used to declare a method as a test case.
+
+A method to be called as test case should have some sequence step,input and expected outcomes feeded. A method that has a potential feature / functionality under test should be considered as @Test method.
+
+The method below this annotation will work as test case that is testing a functionality.
+* A single class can have one or more methods annotated as @Test.
+** All the methods @Test will be executed in an alphabetical order by the method name.
+** We can priority number to control order of execution in ascending order of numbers.
+
+
+What are test fixtures?
+
+Test fixtures : are the pre-conditions and post conditions
+
+if there are sequence of steps to be performed before a test / class / method is pre- conditional test fixture. --> @Before
+**@BeforeTest, @BeforeClass, @BeforeMethod
+
+
+if the sequence of steps are expected to executes after a test / class / method is called post-conditional test fixtures. --> @After
+** AfterTest, @AfterClass, @AfterMethod
+
+
+Flow of the test:
+
+Suite --> Test --> Classes --> Methods 
+
+
+@BeforeTest : a method below this annotation will run before <test> tag
+@BeforeClass : a method below this annotation will run before <class> tag
+@BeforeMethod : a method below thia annotation will run before @Test method with a class.
+
+
+
+
+@AfterTest : a method below this annotation will run after <test> tag
+@AfterClass : a method below this annotation will run after <class> tag
+@AfterMethod : a method below thia annotation will run after successful completion of @Test method with a class.
+* if a @Test method fails because of mismatches or exception, @AfterMethod will not be executed.
+
+** It recommends to create a separate base class to create the test fixtures, if one or more classes is using the same pre-conditional and post conditional statements.
+
+
+@BeforeSuite
+@BeforeTest(<Test 1>)
+	@BeforeClass (Class1)
+			@BeforeMethod
+					@Test(priority=1)
+			@AfterMethod
+			@BeforeMethod
+					@Test(priority=2)
+			@AfterMethod
+	@AfterClass
+
+	@BeforeClass(Class2)
+			@BeforeMethod
+					@Test(priority=1)
+			@AfterMethod
+			@BeforeMethod
+					@Test(priority=2)
+			@AfterMethod
+	@AfterClass
+@AfterTest
+
+@BeforeTest(<Test 2>)
+	@BeforeClass (Class1)
+			@BeforeMethod
+					@Test(priority=1)
+			@AfterMethod
+			@BeforeMethod
+					@Test(priority=2)
+			@AfterMethod
+	@AfterClass
+
+	@BeforeClass(Class2)
+			@BeforeMethod
+					@Test(priority=1)
+			@AfterMethod
+			@BeforeMethod
+					@Test(priority=2)
+			@AfterMethod
+	@AfterClass
+@AfterTest
+
+@AfterSuite
+--------------------------------------------
+
+Parameterization is a mechanism to read the data from different sources and parse them to the test code through a parameter(variable)
+
+1. Parameterization using xml , testNg has an annotation called @Parameters : used to read the parameter value from xml file and source it to any method in the test code as String.
+** Single input testing
+
+2. Parameterization using dataprovider : the data can be feeded into Object[][] and it can be sourced only to @Test method
+** Multiple input testing without using any recursive operations / looping strcutures.
+
+
+** Read the data from an excel and parse to the Object[][] to a method annotated as @DataProvider in return the data can be sourced to @Test method. --> Selenium + TestNG+ Java + ApachePOI
+
+********************************************************************************
+
+Asserts in TestNG:
+
+Asserts are the check points used to compare the expected and actual values
+
+Expected values are feeded in the test code and compared with the actual values fetched at the run session.
+
+If both are same, the test return passed else the test fails.
+
+2 types of asserts:
+Hard Assert : If the comparison fails, the test will terminate in the line of assert
+** Asserts.
+
+Soft Assert : if the comparison fails, the test returns fail but continue to execute the test til the end.
+SoftAssert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

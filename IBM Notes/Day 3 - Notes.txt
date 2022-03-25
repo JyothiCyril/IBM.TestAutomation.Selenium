@@ -1,0 +1,168 @@
+Working with WebElements:
+------------------------
+
+WebElement : Elements / entities / Objects / Test objects present on WebPage
+
+How to reach the WebElement on page? using Locators
+What action to perform on the WebElement?
+What input should be parsed to the WebElements that has tendency to take inputs?
+*****************************************
+
+
+Object Identification in Selenium using Locators.
+
+Locators are the prescribed physical / design properties recommended by Selenium for Uniquely identifying an element.
+
+Locators are the reference properties will teach the tool to reach the elements present on page at the time of execution.
+
+
+Locators are the predefined methods in the "By Class" in Selenium.
+Selenium supports below mentioned properties for indentifying the elements.
+
+Element can have several locators that are listed below. Yet not every property or locator can be used for identification.
+
+** The locator is expected to unique and stable
+
+
+Different types of Locators in Selenium:
+
+2 types:
+
+1. Attribute based locators : Fetched from the HTML design of the page
+
+		HTML ID, Name, ClassName, LinkText, PartialLinkText, TagName
+
+HTML ID : 1st priority in the speed of identification , uniqueness
+name : 2nd priority, **Sometimes / situation name attribute will change dynamically.
+LinkText : 3rd priority ** it can be used only for identfying hyper links
+partial LinkText : optionally can be used instead of link Text
+ClassName : Least priority because of it nature ** One or more elements can have same className ** If the value of the class name have a space, it can't be used for identification.
+TagName : element based its type. ** for multiple element with same category.
+
+2. Structure based locators : Rely on the structure of page. Element position in the HTML strcuture of page.
+
+		Xpath, CSS
+
+
+
+How to fetch the locators?
+
+1.  Browser is equipped with an option to inspect the element to understand and fetch its properties / HTML code.
+2. We can install plug ins that can fetch the locators. --> chropath
+
+
+WebElement
+-----------
+Type of element : Select
+Locator: 
+Method: 
+Input values : Books
+
+Select Books as Category
+
+HTML Code:
+----------
+
+<select aria-describedby="searchDropdownDescription" class="nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown" data-nav-digest="YaNDxYMsix1vZjM7upEvnpX/VWU=" data-nav-selected="0" id="searchDropdownBox" name="url" style="display: block; top: 2.5px;" tabindex="0" title="Search in">
+
+Avaialable Locators :
+--------------------
+TagName : select 
+ClassName : nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown
+id : searchDropdownBox
+name : url
+       
+** not every locator is fit for identification
+
+HTML Code:
+----------
+<input type="text" id="twotabsearchtextbox" value="" name="field-keywords" autocomplete="off" placeholder="" class="nav-input nav-progressive-attribute" dir="auto" tabindex="0" aria-label="Search" xpath="1">
+
+tagname : input
+id="twotabsearchtextbox"
+name="field-keywords"
+class="nav-input nav-progressive-attribute"
+
+
+How to feed the locator into the code:
+--------------------------------------
+
+2 ways:
+-------
+
+Static programing  : locators can be hard coded in the test script using findElement() from WebDriver interface along with the support of By Class
+
+
+// static code : Test Object description is hard coded
+		
+		/*
+		WebElement Category = driver.findElement(By.id("searchDropdownBox"));
+		Select cat = new Select(Category);
+		cat.selectByVisibleText("Books");		
+		
+		Thread.sleep(3000);		
+		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Da vinci code");
+		Thread.sleep(3000);
+		driver.findElement(By.id("nav-search-submit-button")).click();
+		Thread.sleep(3000);
+		*/
+
+Dynamic programing : Locators can be maintained separately into a different class as objectrepository ( place holder where all the element object description can be stored).
+** PageObjectModel : design pattern uses PageFactory class & @FindBy & @FindAll etc.
+
+objectrepository for pages using page object model
+
+Object Repository has the collection for elements and its description
+
+** OR should be orgranized
+** OR will be create and saved into separate package into the same project. (Ref : com.qa.pages)
+** Create the class name with the name of module ex: LoginPage.class
+** Use @FindBy annotation to store the element locator into a reference variable
+** Create a method that can return the element.
+** Argument based constructor that relate all the elements to a specific browser (chrome / Edge / FF) in the test script class file.
+
+Syntax:
+		
+		// locator value will be stored in ref_name;
+		@FindBy(locator="value")
+		WebElement ref_name;
+	
+		// getter method that can return the WebElement.
+	
+		public WebElement getref_name() {
+			return ref_name;
+		}
+
+
+
+// Dynamic code : using Page Object Model, where the test object description is fetched 
+		// from pages / Object Repository.
+		AmazonPages AmazonOR = new AmazonPages(driver);
+		AmazonOR.getCategory().selectByVisibleText("Books");
+		AmazonOR.getSearchTxtField().sendKeys("Da vinci code");
+		AmazonOR.getMagnifierBtn().click();
+
+
+
+
+<span class="a-size-medium a-color-base a-text-normal">The Da Vinci Code: (Robert Langdon Book 2)</span>
+
+<span class="a-size-medium a-color-base a-text-normal">The Da Vinci Code (Abridged Edition)</span>
+<span class="a-size-medium a-color-base a-text-normal">Davinci Code</span>
+
+<span class="a-size-medium a-color-base a-text-normal">World’s Greatest Classics (Box Set of 4 Books)</span>
+
+
+tagName: span
+class: a-size-medium a-color-base a-text-normal
+
+translate the className in a xpath by attribute.
+
+Syntax : //tagName[@AttributeName='AttributeValue']
+
+//span[@class='a-size-medium a-color-base a-text-normal']
+
+
+
+
+

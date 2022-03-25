@@ -1,0 +1,21 @@
+How to execute pom.xml file on Jenkin platform.
+
+*********************************************************
+Test Maintenance phase:
+
+Create the repository in gitHub
+
+1. initialize the project in the PC into local repository --> .git folder
+2. Add all the files in the folder to the staging phases
+3. commit the files : saving the files that are initialize all the files from staging is successfully saved into the local repor - git
+
+push the project into gitHub
+add the collaborators to the repository 
+clone the project from gitHub as collaborator
+add the new code to the existing project and push back the new code to gitHub by creating branches.
+how to create a PullRequest as collaborator to the author for review and merging.
+
+
+Devop to pull the project from gitHub and run on jenkins.
+
+Uri

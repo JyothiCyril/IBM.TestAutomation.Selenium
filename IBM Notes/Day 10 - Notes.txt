@@ -1,0 +1,55 @@
+How to execute pom.xml file on Jenkin platform.
+----------------------------------------------------
+
+
+Jenkins ia an open source CICD tool used for automating the build integration and deployment process by configuring different tools like build management, static analysis, testing, deployment tools, testing tool etc.. on a single platform (Jenkins)
+
+Schedule framework to build the entire project overnight almost every day while working with shorter sprint / iteration.
+
+Technical Agile 
+
+With CICD : incremental approach of developed.
+
+Where the build gets developed almost every day, and testing is performed on the build every next day through out the SPRINT.
+
+As a QA, to contribute for CICD, there need to test code created and maintained in the remote repositories (sVN, gitHub etc..)
+
+CICD is equipped such way, it will the pull the code from QA gitHub and run against the new build integrated.
+
+Jenkins platform is integrated with Maven plugin to run the maven projects
+
+Test automation code / artificats are expected to be in the Maven style project.
+
+1. How start the Jenkins servers
+2. Check if the configuration of plugin is done on Jenkins platform --> Maven , GitHub, TestNg plugin
+3. Define environment paths to access the Maven, Jdk, GitHub from the local system.
+4. Create the project --> Freestyle & Maven project
+5. Define the build confiuration from where the project should be pulled for execution (Local PC / GitHub)
+6. Post-build steps
+7. Run the build
+8. view the results --> Sucess /  Failure / Warning
+
+
+
+1. How to run the Test automation project from local PC on the Jenkins
+2. How to pull the project from gitHun to run on the Jenkins.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

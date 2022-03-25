@@ -1,0 +1,147 @@
+What is automation testing?
+Why do we need to automate an application under test?
+
+Introduction to an automation tool Selenium - Web Driver API
+
+Test automation process using WebDriver API
+
+Selenium WebDriver + TestNG + Apache POI + Extent Reports 
+
+Maven , GitHub
+
+********************************************************************
+What is automation testing?
+
+A software(automation tool) is used to test another software(application which is under test).
+
+
+Every automation tools uses a logical program when executed will test certain features of an application.
+
+** Translating the test cases into a test code and execute it against application.
+
+It is a process of recording and playing back the user events to validate a software product as per the test scenario(positive testing & negative testing).
+
+Reasons for automation testing - functional testing:
+----------------------------------------------------
+
+1. Repeated testing task
+	1. Re-testing 
+	2. Regressional Testing
+	3. Cross browser testing / compatiablity testing
+	4. Repeated input testing
+
+Tools :
+
+Functional Testing : Selenium, UFT, Tosca, silk test, RFT etc.
+Non-functional testing : LR , Jmeter , SP, RPT etc.
+API testing
+Mobile Testing
+Test management tools 
+
+************************************************************************
+
+
+Introduction to Selenium:
+-------------------------
+
+It is open source test automation tool for black box testing ( testing the application from the front end - GUI).
+
+Selenium automates the application running on the browser - ONly for Web Application.
+
+ThoughtWorks - Developed by
+
+selenium.dev
+
+3 primary components
+
+1. Selenium IDE(Integrated Development Environment) : comes as plugin with ff/chrome /edge
+
+** Exploratory testing / smoke testing 
+
+2. Selenium RC(outdated 1.0) --> Replaced WebDriver (Selenium 2.0 / 3.0 / 4.0) : Regressional Testing & Cross browser testing.
+
+
+3. Selenium GRID : Different environment / platforms --> Virtual environment
+
+***********************************************************************************
+
+Introduction to WebDriver API
+------------------------------
+
+WebDriver is a selenium component used to perform cross browser testing.
+
+WebDriver is a multi language, multi browser & multi platform tool.
+
+Webdriver do not an interface / IDE. it comes as a self-contained library.
+
+To use WebDriver API, we need the support of any IDE in which this component can be confirgure.
+
+IDE's should be chosen based on the language of coding.
+
+WebDriver --> Java / C#  / Python / Ruby / Java Script.
+
+
+WebDriver - Java -->.jar (collection of jars) --> Eclipse IDE / InteliJ.
+
+
+-----------------------------
+
+How to confirgure WebDriver component in Eclipse IDE.
+
+**Eclipse IDE for Enterprise Java and Web Developers  --> Eclipse IDE JavaEE developers
+
+Maven project --> Added the dependency for selenium --> Created the required packages and folders to accomodate the test artifacts.
+-------------------------------------------------------------
+
+Test Automation Process in Selenium: It is a systematical approach to construct the test automation framework in selenium.
+
+Test Automation Framework  is categorized into 3 phases:
+---------------------------------------------------------
+
+1. Implementation phase : Designing & Constructing the test automation framework in an organized approach. 
+
+2. Execution phase : Executing / playing back what is designed against the application on different environment.
+
+3. Maintenance phase : Doing the version control of the test artifacts and maintaining the test artifacts on the remote repository will enable the team (team team / Dev ops) need to access the artifacts while working remotely.
+
+
+It is a process of recording and playing back the user events to validate a software product as per the test scenario(positive testing & negative testing).
+
+
+Activities : Test designing + Test Execution + Test Maintenance.
+
+Test designing : Recording the test script / Writing the test script.
+Test execution : executing the test code against the application --> playback
+
+
+** Test scenario : testable requriements to be automated
+** Test automation guidelines : THe test code and test artifacts are expected to be
+
+1. Reusable
+2. Optimized
+3. Organized
+4. Modular
+5. Readability.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

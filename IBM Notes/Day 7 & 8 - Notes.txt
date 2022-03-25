@@ -1,0 +1,124 @@
+Actions Class
+Java Script Interface
+TakesScreenshot
+Synchronization point
+___________________________________________________________________________________
+
+Synchronization point : It is process of matching the anticipated time between the tool and the application.
+
+Tool is very fast and application is slow. We need to pause the execution for a while till the application can ramp up to the speed.
+
+In Selenium, By Default the WebDriver / BRowser instance would wait for 0 secs.
+
+Options does selenium :
+
+
+1. Thread.sleep() --> static time stamp where the execution of the code is paused based on timeout. ** only for shorter time scales.Java based function.
+2. PageLoadTimeOut : Time taken for a page to load completely on the Browser instance.
+3. ImplicitWait : Driver / BRowser
+4. ExplicitWait : WebElement , uses conditional matching.
+
+Scenario:
+
+Login Action(Username and password is entered Login button is clicked) --> Inbox module
+
+Thread.sleep(20); --> whole execution is paused for 20 sec.
+
+What if the Inbox module is loaded <10 sec.
+
+Either implicit or explicit wait.
+
+Max timeout is feeded, yet, it is mandatory for the tool to wait whole time.
+
+
+
+********************************************
+Apache Maven
+-------------
+
+What is apache maven?
+
+It is a build management tool used by a developer to systematically develop a application.
+
+
+Write code --> review the code --> unit testing --> Integration of build
+
+Build : collection of programs
+
+Java projects : jar / ear / war / exe / pom. etc....
+
+collection of packages : collection of class.
+
+Build is expected developed by different programmers in the team.
+
+It is important to have the uniformity acorss the project developement / guidelines to be strictly followed by the individuals while working remotely.
+
+Intergation of the units to a build needs to ensure all the project artifacts are well organized and maintained in a specific / common pattern
+
+Archetypes in maven are the default template followed by the developement team to create the projects in a organized approach and maintain the consistency as well as uniformity.
+
+
+What are the advantages of creating a maven project?
+
+1. Uniformity
+2. Creation till execution it can be organized.
+
+
+What is importance of pom.xml file in maven project?
+** Any archetype project created in maven will default have pom.xml file created.
+
+pom.xml : project object model is called as heart of maven project.
+
+Pom.xml file has the complete control on the structure of the project and relative libraries and plug-in.
+
+Project build : details about the project
+dependency  : fetch the different API libraries into the current project by importing either from RemoteRepository (mvnrepository) or local repository (withing organization) --> When the dependecy is called from the pom.xml file, This will download the requirement jars from either Remote / local repository and store them into local .m2 folder --> MavenDependencies
+
+
+Execution LifeCycle - Goals - Plugin - mnv commands
+
+Clean cycle : Clean : maven-clean-plugin: mvn clean --> Will to help to clean the previous execution results that are loaded to a target folder. (optional)
+**********************************************************************
+Default Cycle : different GOALs : choose to run only specific goals
+
+Validate : validate the resources (artifacts) in the src folder. --> Src/main & src/test : maven-resource-plugin 
+Compiling : Code with in the class is compiled for syntax and run time errors : maven-compiler plugin
+Test : Unit test code from src/test/java will be executed against the respective code written in src/main java --> mvn test --> maven-surefire-plugin to run all the test in src/test --> Junit plugin / API --> mvn test  
+build : all the successful units are integrated to a build (.jar)-->maven-jar-plugin
+Install : maven-install-plugin
+Deploy : maven-deploy-plugin
+
+3. Site : generate the reports
+maven-site-plugin</artifactId>
+maven-project-info-reports-plugin
+
+*************************************************************************************
+
+How is maven used by automation engineer to trigger the test execution using Selenium?
+
+1. create the project using maven archetype
+
+2. all the test code is written under src/test java
+
+3. create the test suite that can run all the test case from src/test/java --> testng.xml
+
+4. Configure the pom.xml file to run the testng.xml file available in the current project.
+
+				1. uses sure-fire plugin	
+				2. mvn test
+				3. Testng dependency should be included : only when the sure fire plugin will understand the code written using Testng framework
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
